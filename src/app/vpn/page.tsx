@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import JoinButton from "./join-button";
 import { z } from "zod";
 import { Metadata } from "next";
-
+import { env } from "@/env.mjs";
 interface VpnPageProps {
   searchParams: {
     [key: string]: string | string[] | undefined;
@@ -29,9 +29,7 @@ export default function VpnPage({ searchParams }: VpnPageProps) {
   const parsed = searchParamsSchema.safeParse(searchParams);
   if (!parsed.success) notFound();
   const { userId, url } = parsed.data;
-  const envUrl = process.env.BASE_URL;
-  if (!envUrl) throw new Error("BASE_URL is not defined");
-  const baseUrl = `${envUrl}?url=${url}&userid=${userId}`;
+  const baseUrl = `${env.REDIRECT_URL}?url=${url}&userid=${userId}`;
   return (
     <>
       <section className="relative flex items-center w-full bg-white md:h-screen">
