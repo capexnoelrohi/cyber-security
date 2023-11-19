@@ -76,7 +76,7 @@ export default function VpnPage({ searchParams }: VpnPageProps) {
                         <JoinButton url={baseUrl} />
                       </div>
                       <p className="mt-3 text-slate-500">
-                        Get notified and you're ready to go!
+                        Get notified and you&apos;re ready to go!
                       </p>
                     </form>
                   </div>
