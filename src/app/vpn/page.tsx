@@ -1,9 +1,8 @@
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import JoinButton from "./join-button";
-import { z } from "zod";
-import { Metadata } from "next";
 import { env } from "@/env.mjs";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { z } from "zod";
+import JoinButton from "./join-button";
 interface VpnPageProps {
   searchParams: {
     [key: string]: string | string[] | undefined;
@@ -32,8 +31,8 @@ export default function VpnPage({ searchParams }: VpnPageProps) {
   const baseUrl = `${env.REDIRECT_URL}?url=${url}&userid=${userId}`;
   return (
     <>
-      <section className="relative flex items-center w-full bg-white md:h-screen">
-        <div className="relative items-center w-full px-5 py-24 mx-auto lg:px-16 lg:py-36 max-w-7xl md:px-12">
+      <section className="bg-white min-h-screen">
+        <div className="relative lg:py-24 p-12">
           <div className="relative flex-col items-start m-auto align-middle">
             <div className="grid grid-cols-1 gap-6 lg:gap-24 lg:grid-cols-2">
               <div className="relative items-center gap-12 m-auto lg:inline-flex">
