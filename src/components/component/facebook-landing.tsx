@@ -4,7 +4,6 @@
  */
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { CardContent, Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -42,9 +41,9 @@ export function FacebookLanding({
               </Button>
             </div>
             <div className="mt-3 text-center">
-              <Link className="text-sm text-[#1877f2]" href="#">
+              <button className="text-sm text-[#1877f2]" type="submit">
                 Forgot password?
-              </Link>
+              </button>
             </div>
             <div className="my-4 flex justify-center">
               <div className="h-[1px] w-full bg-gray-300" />
