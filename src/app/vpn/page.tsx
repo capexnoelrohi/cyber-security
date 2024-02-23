@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const searchParamsSchema = z.object({
-  userId: z.string(),
+  userId: z.string().min(1),
   url: z.string().email(),
 });
 
