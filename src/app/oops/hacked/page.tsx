@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "You got hacked!",
+  description:
+    "You have been hacked! Beware that your credentials are compromised.",
+};
+
 export default function Hacked() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#f0f2f5] p-4">
