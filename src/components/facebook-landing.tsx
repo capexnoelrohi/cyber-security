@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
-export function FacebookLanding({
-  action,
-}: React.ComponentPropsWithoutRef<"form">) {
+interface ComponentProps {
+  action: (formData: FormData) => void;
+}
+
+export default function Component({ action }: ComponentProps) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#f0f2f5] p-4">
       <div className="space-y-8">

